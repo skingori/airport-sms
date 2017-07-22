@@ -59,11 +59,13 @@ while($res = mysqli_fetch_array($result1))
     ?>
     <div class="card">
         <div class="card-header" data-background-color="green">
-            <h5 class="title">All Users</h5>
-            <p class="category">These are registered users</p>
+            <h5 class="title">ALL USERS</h5>
+            <span><a href="" onclick="printData()"><i class="fa fa-print fa-stack-2x"></i></a></span>
+            <p class="category">These are all users registered on our database </p>
+
         </div>
         <div class="card-content table-responsive table-full-width">
-            <table class="table">
+            <table class="table" id="table1">
                 <thead class="text-danger">
                 <th>Login ID</th>
                 <th>User Name</th>
@@ -88,6 +90,15 @@ while($res = mysqli_fetch_array($result1))
                 ?>
 
                 </tbody>
+                <tfoot class="bg-primary">
+                <tr>
+                    <th>Login ID</th>
+                    <th>User Name</th>
+                    <th>User Contact</th>
+                    <th>User Email</th>
+                    <th>User Type</th>
+                </tr>
+                </tfoot>
             </table>
 
         </div>

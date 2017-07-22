@@ -69,9 +69,9 @@ $totalall = $row[0];
 
                         echo $res['Customer_flight_notification_message'];
 
-                    }
-                    ?>
 
+
+               ?>
 
                 </ul>
 
@@ -79,11 +79,16 @@ $totalall = $row[0];
             </div>
 
             <div>
-                <a href="#" class="btn btn-block btn-success">
-                    <i class="ace-icon fa fa-trash-o bigger-110"></i>
+
+             <a href="delete.php?mes=<?php echo $res['Customer_flight_notification_message'];?>" class="btn btn-block btn-success">
+                    <i class="ace-icon fa fa-trash-o bigger-110 alert-danger"></i>
                     <span></span>
                 </a>
             </div>
+                    <?php
+
+                        }
+                    ?>
         </div>
     </div>
 

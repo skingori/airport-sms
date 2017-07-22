@@ -1,4 +1,34 @@
 <?php
+
+/**
+ * Created by PhpStorm.
+ * User: king
+ * Date: 01/04/2017
+ * Time: 11:24
+ */
+// Inialize session
+session_start();
+
+// Check, if user is already login, then jump to secured page
+if (isset($_SESSION['logname']) && isset($_SESSION['rank'])) {
+    switch($_SESSION['rank']) {
+
+        case 2:
+            header('location:../user/index.php');//redirect to  page
+            break;
+
+    }
+}elseif(!isset($_SESSION['logname']) && !isset($_SESSION['rank'])) {
+    header('Location:../sessions.php');
+}
+else
+{
+
+    header('Location:index.php');
+}
+
+
+
 include '../connection/db.php';
 $result = mysqli_query($con,"SELECT COUNT(4) FROM customer_flight_notification_table WHERE Customer_flight_notification_message_status='UNREAD'");
 $row1 = mysqli_fetch_array($result);
@@ -14,6 +44,18 @@ $result = mysqli_query($con,"SELECT COUNT(4) FROM customer_flight_notification_t
 $row3 = mysqli_fetch_array($result);
 
 $totalall = $row3[0];
+
+
+include '../connection/db.php';
+$username=$_SESSION['logname'];
+
+$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE Login_username='$username'");
+
+while($res = mysqli_fetch_array($result1))
+{
+    $username= $res['Login_username'];
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -383,6 +425,10 @@ $totalall = $row3[0];
                         <a href="all-routes.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Registered Routes
+                        </a>
+                        <a href="allusers.php">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Registered users
                         </a>
 
                         <b class="arrow"></b>
