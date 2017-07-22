@@ -366,7 +366,23 @@ $totalall = $row3[0];
                     <li class="">
                         <a href="reports.php">
                             <i class="menu-icon fa fa-caret-right"></i>
-                            Messaging
+                            Sent Messages
+                        </a>
+                        <a href="all-arlines.php">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Registered Airlines
+                        </a>
+                        <a href="all-cust-flight.php">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Passenger & Flight
+                        </a>
+                        <a href="all-flight-rout.php">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Flights & Routes
+                        </a>
+                        <a href="all-routes.php">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Registered Routes
                         </a>
 
                         <b class="arrow"></b>

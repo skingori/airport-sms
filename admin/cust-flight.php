@@ -45,11 +45,11 @@ if(isset($_POST['add'])) {
 
 
 
-    $Customer_flight_id_= $_POST['Customer_flight_id'];
+    $Customer_flight_id_= $_POST[''];
     $Customer_flight_flight_id_= $_POST['Customer_flight_flight_id'];
     $Customer_flight_customer_login_id_= $_POST['Customer_flight_customer_login_id'];
 
-    $check_ = $con->query("SELECT Customer_flight_id FROM customer_flight_table WHERE Customer_flight_id='$Customer_flight_id_'");
+    $check_ = $con->query("SELECT Customer_flight_id FROM customer_flight_table WHERE Customer_flight_id=''");
     $count=$check_->num_rows;
 
     if ($count==0) {
@@ -92,19 +92,15 @@ if(isset($_POST['add'])) {
         ?>
 
         <div class="form-group">
-            <label>Customer Flight ID:</label>
-            <input type="number" name="Customer_flight_id" required class="form-control" placeholder="Customer_flight_id">
-        </div>
-        <div class="form-group">
             <label>Flight ID:</label>
             <select name="Customer_flight_flight_id" required class="form-control">
                 <option selected></option>
                 <?php
-                $result = mysqli_query($con,"SELECT Flight_id FROM flight_table");
+                $result = mysqli_query($con,"SELECT * FROM flight_table");
                 while($row = mysqli_fetch_array($result))
                 {
-                    echo '<option value="'.$row['Flight_id'].'">';
-                    echo $row['Flight_id'];
+                    echo '<option value="'.$row['Flight_number'].'">';
+                    echo $row['Flight_number'];
                     echo '</option>';
                 }
                 ?>

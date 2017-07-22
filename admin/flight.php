@@ -44,8 +44,6 @@ require_once '../connection/db.php';
 if(isset($_POST['add'])) {
 
 
-
-    $Flight_id_= $_POST['Flight_id'];
     $Flight_number_= $_POST['Flight_number'];
     $Flight_name_= $_POST['Flight_name'];
     $Flight_route_route_id_= $_POST['Flight_route_route_id'];
@@ -53,7 +51,7 @@ if(isset($_POST['add'])) {
     $Flight_departure_time_= $_POST['Flight_departure_time'];
     $Flight_airline_id_= $_POST['Flight_airline_id'];
 
-    $check_ = $con->query("SELECT Flight_id FROM flight_table WHERE Flight_id='$Flight_id_'");
+    $check_ = $con->query("SELECT Flight_id FROM flight_table WHERE Flight_id=''");
     $count=$check_->num_rows;
 
     if ($count==0) {
@@ -94,14 +92,38 @@ if(isset($_POST['add'])) {
         }
         ?>
 
+
         <div class="form-group">
-            <input type="number" name="Flight_id" required class="form-control" placeholder="Flight id">
+            <label>Flight Number:</label>
+            <select name="Flight_number" required class="form-control">
+
+                <option selected></option>
+                <?php
+                $result = mysqli_query($con,"SELECT * FROM airline_table");
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo '<option value="'.$row['airline_code'].'">';
+                    echo $row['airline_code'];
+                    echo '</option>';
+                }
+                ?>
+            </select>
         </div>
         <div class="form-group">
-            <input type="text" name="Flight_number" required class="form-control" placeholder="Flight number">
-        </div>
-        <div class="form-group">
-            <input type="text" name="Flight_name" required class="form-control" placeholder="Flight name">
+            <label>Flight Name:</label>
+            <select name="Flight_name" required class="form-control">
+
+                <option selected></option>
+                <?php
+                $result = mysqli_query($con,"SELECT * FROM airline_table");
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo '<option value="'.$row['airline_name'].'">';
+                    echo $row['airline_name'];
+                    echo '</option>';
+                }
+                ?>
+            </select>
         </div>
         <div class="form-group">
             <label>Route ID:</label>

@@ -91,10 +91,22 @@ if(isset($_POST['add'])) {
         ?>
 
         <div class="form-group">
-            <input type="number" name="Route_id" required class="form-control" placeholder="Route ID">
+            <label>Flight Route:</label>
+            <select name="Route_id" required class="form-control">
+                <option>NRB-01</option>
+                <option>AMSTD-02</option>
+                <option>ET-01</option>
+                <option>AAU-02</option>
+                <option>SA-01</option>
+                <option>AZ-02</option>
+                <option>TZ-01</option>
+                <option>AU-O1</option>
+                <option>SK-01</option>
+            </select>
         </div>
         <div class="form-group">
-            <textarea rows="6" cols="50" name="Route_description" required class="form-control">
+            <label>Description:</label>
+            <textarea rows="6" name="Route_description" required class="form-control">N/A
             </textarea>
         </div>
 

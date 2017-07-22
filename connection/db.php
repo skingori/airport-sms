@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-$con = mysqli_connect("localhost","root","","flightsystem");
+$con = mysqli_connect("localhost","root","root","flight");
 // Check connection
 if (mysqli_connect_errno())
 {

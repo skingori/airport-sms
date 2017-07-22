@@ -93,4 +93,4 @@ while($res = mysqli_fetch_array($result1))
     </div>
 
     <!-- PAGE CONTENT ENDS -->
-<?php include "f.php"; ?>
+<?php include "f.php";

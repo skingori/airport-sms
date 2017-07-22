@@ -46,16 +46,15 @@ if(isset($_POST['add'])) {
 
 
 
-$airline_id_= $_POST['airline_id'];
 $airline_code_= $_POST['airline_code'];
 $airline_name_= $_POST['airline_name'];
 
-$check_ = $con->query("SELECT airline_id FROM airline_table WHERE airline_id='$airline_id_'");
+$check_ = $con->query("SELECT airline_code FROM airline_table WHERE airline_code='$airline_code_'");
 $count=$check_->num_rows;
 
 if ($count==0) {
 
-$query = "INSERT INTO airline_table(airline_id,airline_code,airline_name) VALUES('$airline_id_','$airline_code_','$airline_name_')";
+$query = "INSERT INTO airline_table(airline_code,airline_name) VALUES('$airline_code_','$airline_name_')";
 
 //inserting in login table
 //$query .= "INSERT INTO Login_table(Login_Username,login_rank,login_password,login_status) VALUES('$uname','$rank','$enc','Inactive')";
@@ -91,17 +90,28 @@ $con->close();
             echo $msg;
         }
         ?>
-        <div class="form-group">
-            <label>Airline ID:</label>
-            <input type="text" name="airline_id" required class="form-control" placeholder="Airline ID">
-        </div>
+        
         <div class="form-group">
             <label>Airline Code:</label>
-            <input type="text" name="airline_code" required class="form-control" placeholder="Airline Code">
+            <select class="form-control" name="airline_code">
+                <option>KLM01</option>
+                <option>KQ01</option>
+                <option>ET01</option>
+                <option>AAU01</option>
+                <option>SA01</option>
+                <option>AZ01</option>
+            </select>
         </div>
         <div class="form-group">
             <label>Airline Name:</label>
-            <input type="text" name="airline_name" required class="form-control" placeholder="Airline Name">
+            <select class="form-control" name="airline_name">
+                <option>ROYAL DUTCH AIRLINE</option>
+                <option>KENYA AIRWAYS</option>
+                <option>ETHIOPIAN AIRLINE</option>
+                <option>AUSTRALIAN AIRWAYS</option>
+                <option>SOUTH AFRICAN AIRWAYS</option>
+                <option>ALITALIA</option>
+            </select>
         </div>
 
         <button type="submit" name="add" class="btn btn-success">Add Airline</button>
