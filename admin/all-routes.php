@@ -15,6 +15,7 @@ $result = mysqli_query($con, "SELECT * FROM `routes_table`");
                 <thead class="" style="font-family: 'Arial Black'">
                 <th>ROUTE CODE</th>
                 <th>DESCRIPTION</th>
+                <th></th>
                 </thead>
                 <tbody>
 
@@ -25,6 +26,8 @@ $result = mysqli_query($con, "SELECT * FROM `routes_table`");
                     echo "<tr class=''>";
                     echo "<td>".$res['Route_id']."</td>";
                     echo "<td>".$res['Route_description']."</td>";
+                    echo "<td><a href=\"delete.php?art=$res[Route_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash lg-2'></a></td>";
+
 
 
 
@@ -39,6 +42,7 @@ $result = mysqli_query($con, "SELECT * FROM `routes_table`");
                 <tr>
                     <th>ROUTE CODE</th>
                     <th>DESCRIPTION</th>
+                    <th></th>
 
                 </tr>
 

@@ -16,6 +16,7 @@ $result = mysqli_query($con, "SELECT * FROM `airline_table`");
                 <th>AIRLINE ID</th>
                 <th>AIRLINE CODE</th>
                 <th>AIRLINE NAME</th>
+                <td></td>
                 </thead>
                 <tbody>
 
@@ -27,6 +28,8 @@ $result = mysqli_query($con, "SELECT * FROM `airline_table`");
                     echo "<td>".$res['airline_id']."</td>";
                     echo "<td>".$res['airline_code']."</td>";
                     echo "<td>".$res['airline_name']."</td>";
+                    echo "<td><a href=\"delete.php?ai=$res[airline_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash lg-2'></a></td>";
+
 
 
 
@@ -42,6 +45,7 @@ $result = mysqli_query($con, "SELECT * FROM `airline_table`");
                     <th>AIRLINE ID</th>
                     <th>AIRLINE CODE</th>
                     <th>AIRLINE NAME</th>
+                    <td></td>
 
 
                 </tr>

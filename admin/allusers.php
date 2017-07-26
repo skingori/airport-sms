@@ -72,6 +72,7 @@ while($res = mysqli_fetch_array($result1))
                 <th>User Contact</th>
                 <th>User Email</th>
                 <th>User Type</th>
+                <th></th>
                 </thead>
                 <tbody>
 
@@ -84,7 +85,8 @@ while($res = mysqli_fetch_array($result1))
                     echo "<td>".$res['Login_contact']."</td>";
                     echo "<td>".$res['Login_email']."</td>";
                     echo "<td>".$res['Login_rank']."</td>";
-                    
+                    echo "<td><a href=\"delete.php?us=$res[Login_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash lg-2'></a></td>";
+
 
                 }
                 ?>
@@ -97,6 +99,7 @@ while($res = mysqli_fetch_array($result1))
                     <th>User Contact</th>
                     <th>User Email</th>
                     <th>User Type</th>
+                    <th></th>
                 </tr>
                 </tfoot>
             </table>

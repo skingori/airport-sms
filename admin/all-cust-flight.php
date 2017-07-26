@@ -17,6 +17,7 @@ $result = mysqli_query($con, "SELECT * FROM `customer_flight_table`");
                 <th>FLIGHT CODE</th>
                 <th>PASSENGER ID</th>
                 <th>TIME</th>
+                <td></td>
                 </thead>
                 <tbody>
 
@@ -29,6 +30,8 @@ $result = mysqli_query($con, "SELECT * FROM `customer_flight_table`");
                     echo "<td>".$res['Customer_flight_flight_id']."</td>";
                     echo "<td>".$res['Customer_flight_customer_login_id']."</td>";
                     echo "<td>".$res['Customer_flight_timestamp']."</td>";
+                    echo "<td><a href=\"delete.php?cf=$res[Customer_flight_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash lg-2'></a></td>";
+
 
 
 
@@ -45,6 +48,7 @@ $result = mysqli_query($con, "SELECT * FROM `customer_flight_table`");
                     <th>FLIGHT CODE</th>
                     <th>PASSENGER ID</th>
                     <th>TIME</th>
+                    <td></td>
 
 
                 </tr>

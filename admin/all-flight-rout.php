@@ -16,6 +16,7 @@ $result = mysqli_query($con, "SELECT * FROM `flight_route_table`");
                 <th>ROUTE ID</th>
                 <th>ROUTE CODE</th>
                 <th>FLIGHT ID</th>
+                <td></td>
                 </thead>
                 <tbody>
 
@@ -27,6 +28,8 @@ $result = mysqli_query($con, "SELECT * FROM `flight_route_table`");
                     echo "<td>".$res['Flight_route_id']."</td>";
                     echo "<td>".$res['Flight_route_route_id']."</td>";
                     echo "<td>".$res['Flight_route_flight_id']."</td>";
+                    echo "<td><a href=\"delete.php?cf=$res[Flight_route_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash lg-2'></a></td>";
+
 
 
 
@@ -42,6 +45,7 @@ $result = mysqli_query($con, "SELECT * FROM `flight_route_table`");
                     <th>ROUTE ID</th>
                     <th>ROUTE CODE</th>
                     <th>FLIGHT ID</th>
+                    <td></td>
 
                 </tr>
 

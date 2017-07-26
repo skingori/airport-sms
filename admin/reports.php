@@ -17,6 +17,7 @@ $result = mysqli_query($con, "SELECT * FROM `customer_flight_notification_table`
                 <th width="15%">STATUS</th>
                 <th width="15%">FLIGHT ID</th>
                 <th width="75%">MESSAGE</th>
+                <td></td>
                 </thead>
                 <tbody>
 
@@ -29,6 +30,8 @@ $result = mysqli_query($con, "SELECT * FROM `customer_flight_notification_table`
                     echo "<td>".$res['Customer_flight_notification_message_status']."</td>";
                     echo "<td>".$res['Customer_flight_not_cust_flight_fl_id']."</td>";
                     echo "<td>".$res['Customer_flight_notification_message']."</td>";
+                    echo "<td><a href=\"delete.php?mes=$res[Customer_flight_notification_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash lg-2'></a></td>";
+
 
 
 
@@ -50,6 +53,7 @@ $result = mysqli_query($con, "SELECT * FROM `customer_flight_notification_table`
                     <td></td>
                     <td></td>
                     <td><?php echo $totalx ;?></td>
+                    <td></td>
 
 
                 </tr>
